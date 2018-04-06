@@ -4,16 +4,31 @@ import java.util.Date;
 
 public final class Message {
 
-    private final String version;
+    private String version;
 
-    private final String message;
+    private String message;
 
-    private final Date messageCreationDate;
+    private Date messageCreationDate;
+
+    public Message(){}
 
     public Message(String version, String message, Date messageCreationDate) {
         this.version = version;
         this.message = message;
         this.messageCreationDate = messageCreationDate;
+    }
+
+
+    public String getVersion() {
+        return version;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public Date getMessageCreationDate() {
+        return messageCreationDate;
     }
 
     @Override
