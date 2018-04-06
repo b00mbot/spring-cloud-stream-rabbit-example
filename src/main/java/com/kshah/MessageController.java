@@ -1,5 +1,6 @@
 package com.kshah;
 
+import com.kshah.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,8 @@ public class MessageController {
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public ResponseEntity sendMessage(@RequestBody String message) {
-        org.springframework.messaging.Message<String> message1 = MessageBuilder.withPayload(message).build();
+    public ResponseEntity sendMessage(@RequestBody Message message) {
+        org.springframework.messaging.Message<Message> message1 = MessageBuilder.withPayload(message).build();
         messageSource.outbound().send(message1);
         return new ResponseEntity(HttpStatus.OK);
     }
