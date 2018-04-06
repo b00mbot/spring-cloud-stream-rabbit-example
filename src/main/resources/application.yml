@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: test
+  cloud:
+    stream:
+      bindings:
+        outbound:
+          binder: rabbit
+          destination: outbound
+          contentType: application/json
