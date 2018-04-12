@@ -21,3 +21,9 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: test
+
+# Custom configurations
+queue:
+  outbound:
+    retry-attempts: 3
+    timeout: 10000 # (in ms)
